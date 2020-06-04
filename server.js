@@ -5,14 +5,15 @@ let sanitizeHTML = require('sanitize-html')
 let app = express()
 let db
 
-let port = process.env.port
+let port = process.env.PORT;
+
 if(port==null || port==""){
     port=3000
 }
 
 app.use(express.static('public'))
 
-let connectionString = 'mongodb+srv://todoApp:todoApp@cluster0-bypo8.mongodb.net/ToDoApp?retryWrites=true&w=majority'
+let connectionString =  //Use the mongo atlas connection string of your account
 mongodb.connect(connectionString, {useNewUrlParser: true}, function(err, client){
     db = client.db()
     app.listen(port)
